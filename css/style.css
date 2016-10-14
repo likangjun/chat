@@ -1,0 +1,215 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: -moz-linear-gradient(-45deg, #183850 0, #183850 25%, #192c46 50%, #22254c 75%, #22254c 100%);
+    background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192c46 50%, #22254c 75%, #22254c 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "微软雅黑";
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgba(25, 147, 147, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(25, 147, 147, 0.2);
+}
+
+.chat-thread {
+    margin: 0 auto;
+    padding: 0 20px 0 0;
+    list-style: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.chat-thread li {
+    position: relative;
+    clear: both;
+    display: inline-block;
+    padding: 16px 20px 16px 20px;
+    font: 16px/20px;
+    border-radius: 10px;
+    background-color: rgba(25, 147, 147, 0.2);
+}
+
+/* Chat - Avatar */
+.chat-thread li:before {
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    content: '';
+}
+
+/* Chat - Speech Bubble Arrow */
+.chat-thread li:after {
+    position: absolute;
+    top: 15px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 15px solid rgba(25, 147, 147, 0.2);
+}
+
+.right {
+    animation: show-chat-odd 0.15s 1 ease-in;
+    -moz-animation: show-chat-odd 0.15s 1 ease-in;
+    -webkit-animation: show-chat-odd 0.15s 1 ease-in;
+    float: right;
+    margin-right: 80px;
+    color: #0AD5C1;
+    margin: 0 80px 20px 0;
+}
+
+.right:before {
+    right: -80px;
+    background-image: url(../image/user.jpg);
+}
+
+.right:after {
+    border-right: 16px solid transparent;
+    right: -16px;
+}
+
+.left{
+    animation: show-chat-even 0.15s 1 ease-in;
+    -moz-animation: show-chat-even 0.15s 1 ease-in;
+    -webkit-animation: show-chat-even 0.15s 1 ease-in;
+    float: left;
+    margin-left: 80px;
+    color: #0EC879;
+    margin: 0 0 20px 80px;
+}
+
+.left:before {
+    left: -80px;
+    background-image: url(../image/user.jpg);
+}
+
+.left:after {
+    border-left: 15px solid transparent;
+    left: -15px;
+}
+
+.chat-window {
+    position: fixed;
+    bottom: 18px;
+}
+
+.chat-window-message {
+    width: 100%;
+    height: 48px;
+    font: 32px/48px;
+    background: none;
+    color: #0AD5C1;
+    border: 0;
+    border-bottom: 1px solid rgba(25, 147, 147, 0.2);
+    outline: none;
+}
+.message{
+    display: inline-block;
+    margin-top: 50px;
+}
+
+/* Small screens */
+@media all and (max-width: 767px) {
+    .chat-thread {
+        height: 260px;
+    }
+    .message{
+        width: 80%;
+    }
+
+}
+/* Medium and large screens */
+@media all and (min-width: 768px) {
+    .chat-thread {
+        height: 60%;
+    }
+     .message{
+        width: 60%;
+    }
+}
+.credits{
+    text-align:center;
+    margin-top:35px;
+    color: rgba(255, 255, 255, 0.35);
+}
+.credits a{
+    text-decoration:none;
+    color: rgba(255, 255, 255, 0.35);
+}
+#userlist{
+    display: inline-block;
+    width: 20%;
+    height: 60%;
+    float: left;
+}
+#userlist p{
+    color: #0EC879;
+    padding-bottom: 15px;
+    z-index: 8;
+    cursor: default;
+}
+#userlist h1{
+    color: #0AD5C1;
+}
+#userlist div{
+    margin-right: 20px;
+    height: calc(100% + 80px);
+    overflow: auto;
+    margin-top: 30px;
+}
+#post{
+    position: relative;
+    left: calc(100% - 82px);    
+    background: #f7671d;
+    border: 1px solid #f06923;
+    height: 28px;
+    line-height: 29px;
+    width: 60px;
+    font-size: 14px;
+    display: block;
+    color: #fff;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.25);    
+    padding: 0 10px 0 10px;
+    white-space: nowrap;
+    border-radius: 2px;    
+    min-width: 40px;
+    text-align: center;
+    outline: none;top: 5px;
+}
+#content{
+    width: 100%;
+    height: 100px;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.15) inset;    
+    background-color: #fff;
+    font-size: 18px;
+}
+#content:focus{
+    border: 2px #f7671d solid; 
+}
+#main{
+    max-width: 75%;
+    margin: 30px auto 0 20%;
+}
+.close{
+    background: url(../image/close.png);
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 5%;
+    top: 40px;
+    display: block;
+    background-size: 30px;
+    background-repeat: no-repeat;
+}
