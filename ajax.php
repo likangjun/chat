@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 if (isset($_POST['content'])) {
     $filename = "log/" . date("Ymd", time()) . ".txt";
@@ -16,3 +17,14 @@ if (isset($_POST['content'])) {
     fwrite($file, json_encode($data));
     fclose($file);
 }
+
+
+/****数据库方式
+require 'conn.inc';
+session_start();
+if (isset($_POST['content'])) {
+    $content = $_POST['content'];
+    $sql = "INSERT INTO talkroom (content,uid) VALUES ('{$content}','{$_SESSION['uid']}');";
+    $res = mysqli_query($link, $sql);
+}
+*****/
