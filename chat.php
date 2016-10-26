@@ -49,7 +49,6 @@ if (empty($_SESSION['username'])) {
                             window.location.reload();
                         } else if (obj.res == 1) {
                             alert(obj.msg);
-                            window.location.reload();
                         }
                     });
                 }
@@ -101,7 +100,7 @@ if (empty($_SESSION['username'])) {
         </div>
     </div>
     <div class="message">
-        <span class="close" onclick="close()"></span>
+        <span class="close""></span>
         <ul class="chat-thread" id="chatshow">
         </ul>
         <div style="margin-top: 20px;">

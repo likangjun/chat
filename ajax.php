@@ -1,6 +1,5 @@
 <?php
 session_start();
-require 'conn.inc';
 if (isset($_POST['content'])) {
     $filename = "log/" . date("Ymd", time()) . ".txt";
     $con = array(
