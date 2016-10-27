@@ -54,9 +54,6 @@ if (empty($_SESSION['username'])) {
                 }
             });
             function getData(msg) {
-                if (msg == undefined) {
-                    msg = '';
-                }
                 $.post("get.php", {"msg": msg}, function (data) {
                     if (data) {
                         var chatcontent = '';
@@ -71,7 +68,7 @@ if (empty($_SESSION['username'])) {
                         $("#chatshow").html(chatcontent);
                         bottom();
                     }
-                    getData();
+                    getData("");
                 });
             }
 
